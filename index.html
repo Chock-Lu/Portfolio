@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/82dd1551ac.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">首頁</a></li>
-                    <li><a href="#">關於我</a></li>
-                    <li><a href="#">專題介紹</a></li>
-                    <li><a href="#">學習路程</a></li>
-                    <li><a href="#">聯絡我</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">首頁</a></li>
+                    <li><a href="#about">關於我</a></li>
+                    <li><a href="#project">專題介紹</a></li>
+                    <li><a href="#learning">學習路程</a></li>
+                    <li><a href="#contact">聯絡我</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <h1>你好，我是<span class="auto-type"></span></h1>
@@ -123,6 +126,76 @@
         </div>
     </div>
 
+    <!-- --------------------project-------------------- -->
+    <div id="project">
+        <div class="container">
+            <h1 class="sub-title"><span class="auto-type-project"></h1>
+            <div class="project-list">
+                <div class="project">
+                    <img src="images/project1.png">
+                    <div class="layer">
+                        <h2>畢業專題</h2>
+                        <h3>機車安全系統</h3>
+                        <p>使用 IOT 設備紀錄機車行駛的各種駕駛數據（速度、三軸加速度、車距、位置），並利用政府開放資料，以機器學習模型計算機車安全駕駛分數，並在 APP 上顯示即時資訊（路段速限以及時下數據）以及過去駕駛之歷史紀錄（超速紀錄、急轉彎、急加速、急煞車等資訊）。</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/project2.png">
+                    <div class="layer">
+                        <h2>工業技術研究院觀光案</h2>
+                        <h3>大數據觀光指標</h3>
+                        <p>使用 IOT 設備紀錄機車行駛的各種駕駛數據（速度、三軸加速度、車距、位置），並利用政府開放資料，以機器學習模型計算機車安全駕駛分數，並在 APP 上顯示即時資訊（路段速限以及時下數據）以及過去駕駛之歷史紀錄（超速紀錄、急轉彎、急加速、急煞車等資訊）。</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/project3.png">
+                    <div class="layer">
+                        <h2>工業技術研究院文化案</h2>
+                        <h3>分散式進階RFM模型</h3>
+                        <p>使用 IOT 設備紀錄機車行駛的各種駕駛數據（速度、三軸加速度、車距、位置），並利用政府開放資料，以機器學習模型計算機車安全駕駛分數，並在 APP 上顯示即時資訊（路段速限以及時下數據）以及過去駕駛之歷史紀錄（超速紀錄、急轉彎、急加速、急煞車等資訊）。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------learning-------------------- -->
+    <div id="learning">
+        <div class="container">
+            <h1 class="sub-title"><span class="auto-type-learning"></h1>
+        </div>
+    </div>
+    <!-- --------------------contact-------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title"><span class="auto-type-contact"></h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>chock.cuevas@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+886 978-903-950</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/Chock-Lu"><i class="fa-brands fa-square-github"></i></a>
+                        <a href="https://www.linkedin.com/in/yan-cheng-lu-21b810201/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/resume.pdf" download="" class="btn">履歷下載</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="title" placeholder="主旨" required>
+                        <input type="email" name="email" placeholder="信箱" required>
+                        <textarea name="message" rows="6" placeholder="訊息" required></textarea>
+                        <button type="submit" class="btn">送出</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-text">
+            <p>Made with <i class="fa-solid fa-heart"></i> by Chock.</p>
+        </div>
+    </div>
+
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed(".auto-type", {
@@ -133,6 +206,24 @@
         })
         var typed2 = new Typed(".auto-type-about", {
             strings: ["關於我"],
+            typeSpeed: 200,
+            backSpeed: 100,
+            loop: false
+        })
+        var typed3 = new Typed(".auto-type-project", {
+            strings: ["專題介紹"],
+            typeSpeed: 200,
+            backSpeed: 100,
+            loop: false
+        })
+        var typed4 = new Typed(".auto-type-learning", {
+            strings: ["學習路程"],
+            typeSpeed: 200,
+            backSpeed: 100,
+            loop: false
+        })
+        var typed5 = new Typed(".auto-type-contact", {
+            strings: ["聯絡我"],
             typeSpeed: 200,
             backSpeed: 100,
             loop: false
@@ -154,6 +245,36 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwWVdQZkhW93nekD5gNEoa_W34LtKl9O0o7eQmOUmEHjHITNfxyPYdOHqrug3iFppHL/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "已寄出訊息! 若需要回信，請寄信到：chock.cuevas@gmail.com"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },3000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
 </body>
 </html>
