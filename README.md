@@ -1,2 +1,3 @@
 # Portfolio
-My personal portfolio for job hunt.
+My personal portfolio.
+https://chock-lu.github.io/Portfolio/
